@@ -34,7 +34,7 @@ public class CarroComprasSteps {
                 (carroComprasPage.getNomProd()).getText();
         System.out.println("Lo que esta en el carro: "+txtProdCarro);
         String txtProducto = ProductoSteps.txtProducto;
-        //String txtProductos = productoSteps.getTxtProducto();
+        //String txtProductos = productoSteps.getTxtProducto(); --prueba
         System.out.println("Lo que se seleccionó: "+txtProducto);
         Assert.assertEquals(txtProdCarro,txtProducto);
         System.out.println("funciono!");
