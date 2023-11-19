@@ -39,5 +39,4 @@ public class CarroComprasSteps {
         Assert.assertEquals(txtProdCarro,txtProducto);
         System.out.println("funciono!");
     }
-
 }
