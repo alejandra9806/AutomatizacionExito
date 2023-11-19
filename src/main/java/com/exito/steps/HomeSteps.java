@@ -1,6 +1,7 @@
 package com.exito.steps;
 
 import com.exito.pageObject.HomePage;
+import com.exito.utils.Data;
 import net.thucydides.core.annotations.Step;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Assert;
@@ -41,10 +42,19 @@ public class HomeSteps {
 
     @Step("Click en categoría y subCategoria")
     public void clicCategoria(){
-        WebElement mainMenu = homePage.getDriver().findElement(homePage.getBtn1categoria());
+        /*WebElement mainMenu = homePage.getDriver().findElement(homePage.getBtn1categoria());
         Actions actions = new Actions(homePage.getDriver());
         actions.moveToElement(mainMenu).perform();
         homePage.getDriver().findElement(homePage.getLnk2categoria())
+                .click();*/
+        String categoria1= Data.extractTo().get(0).get("Categoria1");
+        System.out.println(categoria1);
+        String categoria2= Data.extractTo().get(0).get("Categoria2");
+        System.out.println(categoria2);
+        WebElement mainMenu = homePage.getDriver().findElement(By.xpath("//p[contains(text(),'" + categoria1 + "']"));
+        Actions actions = new Actions(homePage.getDriver());
+        actions.moveToElement(mainMenu).perform();
+        homePage.getDriver().findElement(By.xpath("//a[contains(text(),'" + categoria2 + "']"))
                 .click();
     }
 
