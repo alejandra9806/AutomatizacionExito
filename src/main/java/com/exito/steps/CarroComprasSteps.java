@@ -1,6 +1,7 @@
 package com.exito.steps;
 
 import com.exito.pageObject.CarroComprasPage;
+import com.exito.utils.Data;
 import net.thucydides.core.annotations.Step;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Assert;
@@ -24,7 +25,7 @@ public class CarroComprasSteps {
                 ).isDisplayed()
         );
         carroComprasPage.getDriver().findElement(carroComprasPage.getTxtCorreo())
-                .sendKeys("compra@gmail.com");
+                .sendKeys(Data.extractTo().get(0).get("Usuario"));
         carroComprasPage.getDriver().findElement(carroComprasPage.getBtnCorreo()).click();
     }
 

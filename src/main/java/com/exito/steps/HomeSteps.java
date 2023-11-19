@@ -23,7 +23,6 @@ public class HomeSteps {
 
     @Step("Cerrar publicidad")
     public void cerrarPubli(){
-
         espera1(homePage.getDriver(),homePage.getBtnPubli());
         Assert.assertTrue(
                 homePage.getDriver().findElement(
@@ -42,7 +41,6 @@ public class HomeSteps {
 
     @Step("Click en categoría y subCategoria")
     public void clicCategoria(){
-
         WebElement mainMenu = homePage.getDriver().findElement(homePage.getBtn1categoria());
         Actions actions = new Actions(homePage.getDriver());
         actions.moveToElement(mainMenu).perform();
