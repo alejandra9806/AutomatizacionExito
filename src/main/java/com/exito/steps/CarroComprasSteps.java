@@ -1,5 +1,6 @@
 package com.exito.steps;
 
+import com.exito.models.ProductModel;
 import com.exito.pageObject.CarroComprasPage;
 import net.thucydides.core.annotations.Step;
 import org.fluentlenium.core.annotation.Page;
@@ -10,7 +11,6 @@ import static com.exito.utils.Esperas.espera1;
 public class CarroComprasSteps {
     @Page
     CarroComprasPage carroComprasPage;
-
     @Step("Ir al carro de compras")
     public void irCarroCompras(){
         carroComprasPage.getDriver().findElement(carroComprasPage.getLnkCarro()).click();
@@ -32,11 +32,7 @@ public class CarroComprasSteps {
     public void verificaProd(){
         String txtProdCarro = carroComprasPage.getDriver().findElement
                 (carroComprasPage.getNomProd()).getText();
-        System.out.println("Lo que esta en el carro: "+txtProdCarro);
-        String txtProducto = ProductoSteps.txtProducto;
-        //String txtProductos = productoSteps.getTxtProducto();
-        System.out.println("Lo que se seleccionó: "+txtProducto);
-        Assert.assertEquals(txtProdCarro,txtProducto);
-        System.out.println("funciono!");
+        //String txtProducto = ProductoSteps.txtProducto; --Como lo manejé inicialmente por medio de una variable publica
+        Assert.assertEquals(txtProdCarro,ProductModel.getNameProduct());
     }
 }

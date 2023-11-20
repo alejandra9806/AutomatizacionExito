@@ -26,11 +26,11 @@ public class AgregarProdSetpDef {
     @Cuando("selecciona el producto")
     public void seleccionaElProducto() {
         productoSteps.agregarPro();
+        carroComprasSteps.irCarroCompras();
+        carroComprasSteps.confCorreo();
     }
     @Entonces("el usuario podra visualizar el producto en el carro de compras")
     public void elUsuarioPodraVisualizarElProductoEnElCarroDeCompras() {
-        carroComprasSteps.irCarroCompras();
-        carroComprasSteps.confCorreo();
         carroComprasSteps.verificaProd();
 
     }
